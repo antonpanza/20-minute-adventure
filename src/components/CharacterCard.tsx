@@ -1,10 +1,12 @@
 import React from "react";
 
-const CharacterCard = () => {
+const CharacterCard = ({ character }) => {
     return (
-        <div
+        <a
+            href={character.url}
+            target="_blank"
             className="shadow-lg py-5 px-8 m-4 max-w-[518px] flex flex-col transition-transform transform hover:scale-105">
-            <h2 className="text-[25px] leading-none mb-14">Stair Goblin - Mythological Creature</h2>
+            <h2 className="text-[25px] leading-none mb-14">{character.name}</h2>
 
             <div className="mt-auto flex justify-between items-center">
                 <div className="flex items-center text-[14px]">
@@ -19,7 +21,7 @@ const CharacterCard = () => {
                     04.11.2017
                 </div>
             </div>
-        </div>
+        </a>
     );
 };
 
