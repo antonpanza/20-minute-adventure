@@ -4,8 +4,17 @@ const SearchBar = ({ onSearch }) => {
     const [query, setQuery] = useState("");
 
     useEffect(() => {
+        document.getElementById("searchInput").focus();
+    }, []);
+
+    useEffect(() => {
         if (query.length < 3) return;
-        const searchQuery = onSearch(query);
+
+        const delayDebounceFn = setTimeout(() => {
+            onSearch(query);
+        }, 500);
+
+        return () => clearTimeout(delayDebounceFn);
     }, [query]);
 
     return (
