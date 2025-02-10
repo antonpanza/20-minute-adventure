@@ -1,4 +1,12 @@
-const SearchBar = () => {
+import { useState, useEffect } from "react";
+
+const SearchBar = ({ onSearch }) => {
+    const [query, setQuery] = useState("");
+
+    useEffect(() => {
+        if (query.length < 3) return;
+        const searchQuery = onSearch(query);
+    }, [query]);
 
     return (
         <div className="flex justify-center">
@@ -7,6 +15,8 @@ const SearchBar = () => {
                     id="searchInput"
                     type="text"
                     placeholder="Search characters..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
                     className="w-full p-5 shadow-lg
                  focus:outline-none focus:ring-2 focus:ring-purple
                  placeholder-purple text-[22px] text-purple font-bold leading-none
@@ -18,3 +28,5 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+

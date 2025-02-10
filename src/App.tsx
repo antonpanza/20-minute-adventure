@@ -3,9 +3,16 @@ import SearchBar from "./components/SearchBar";
 import CharacterCard from "./components/CharacterCard";
 
 function App() {
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        console.log(query);
+    };
+
     return (
         <>
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} />
             <CharacterCard/>
         </>
     )
