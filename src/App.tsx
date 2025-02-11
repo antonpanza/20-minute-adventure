@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
-import SearchBar from "./components/SearchBar";
-import CharacterCard from "./components/CharacterCard";
-import StatusMessage from "./components/StatusMessage";
+import SearchBar from "./components/SearchBar.js";
+import CharacterCard from "./components/CharacterCard.js";
+import StatusMessage from "./components/StatusMessage.js";
 
 function App() {
     const [searchQuery, setSearchQuery] = useState("");
