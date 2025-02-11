@@ -4,8 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
+    base: 'https://antonpanza.github.io/20-minute-adventure/20-minute-adventure/',
+    plugins: [
       react(),
       tailwindcss()
-  ],
+    ],
 })
