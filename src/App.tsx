@@ -39,7 +39,7 @@ function App() {
     }, [searchQuery]);
 
     return (
-        <>
+        <div className="max-w-[1596px] w-full m-auto">
             <SearchBar onSearch={setSearchQuery} />
 
             <StatusMessage
@@ -48,10 +48,12 @@ function App() {
                 charactersCount={characters.length}
             />
 
-            {characters.map((char) => (
-                <CharacterCard key={char.id} character={char} />
-            ))}
-        </>
+            <div className="flex flex-wrap justify-center m-auto gap-5 mx-10 my-17">
+                {characters.map((char, index) => (
+                    <CharacterCard key={char.id} character={char}  index={index}  />
+                ))}
+            </div>
+        </div>
     )
 }
 
