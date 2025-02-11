@@ -8,7 +8,7 @@ const SearchBar = ({ onSearch }) => {
     }, []);
 
     useEffect(() => {
-        if (query.length < 3) return;
+        /*if (query.length < 3) return;*/
 
         const delayDebounceFn = setTimeout(() => {
             onSearch(query);

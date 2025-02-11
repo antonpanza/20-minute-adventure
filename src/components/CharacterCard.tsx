@@ -2,7 +2,6 @@ import React from "react";
 
 const CharacterCard = ({ character, index }) => {
     return (
-        /*bg-white rounded-lg shadow-md p-6 m-4 w-[400px] flex flex-col*/
         <a
             key={character.id}
             href={character.url}

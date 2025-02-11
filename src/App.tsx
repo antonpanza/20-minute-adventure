@@ -10,7 +10,10 @@ function App() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        if (searchQuery.length < 3) return;
+        if (searchQuery.length < 3) {
+            setCharacters([]);
+            return;
+        }
 
         const fetchCharacters = async () => {
             setLoading(true);
@@ -46,6 +49,7 @@ function App() {
                 loading={loading}
                 error={error}
                 charactersCount={characters.length}
+                query={searchQuery}
             />
 
             <div className="flex flex-wrap justify-center m-auto gap-5 mx-10 my-17">
