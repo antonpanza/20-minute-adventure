@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 
-const SearchBar = ({ onSearch }) => {
-    const [query, setQuery] = useState("");
+interface SearchBarProps {
+    onSearch: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+    const [query, setQuery] = useState<string>("");
 
     useEffect(() => {
-        document.getElementById("searchInput").focus();
+        document.getElementById("searchInput")?.focus();
     }, []);
 
     useEffect(() => {

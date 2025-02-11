@@ -1,11 +1,22 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react';
 import SearchBar from "./components/SearchBar.js";
 import CharacterCard from "./components/CharacterCard.js";
 import StatusMessage from "./components/StatusMessage.js";
 
+interface Character {
+    id: number;
+    name: string;
+    status: string;
+    species: string;
+    gender: string;
+    image: string;
+    created: string
+    url: string;
+}
+
 function App() {
     const [searchQuery, setSearchQuery] = useState("");
-    const [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState<Character[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -54,11 +65,11 @@ function App() {
 
             <div className="flex flex-wrap justify-center m-auto gap-5 mx-10 my-17">
                 {characters.map((char, index) => (
-                    <CharacterCard key={char.id} character={char}  index={index}  />
+                    <CharacterCard key={char.id} character={char} index={index} />
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default App;

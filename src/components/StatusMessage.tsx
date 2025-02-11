@@ -1,4 +1,13 @@
-const StatusMessage = ({ loading, error, charactersCount, query }) => {
+import React from 'react';
+
+interface StatusMessageProps {
+    loading: boolean;
+    error: string;
+    charactersCount: number;
+    query: string;
+}
+
+const StatusMessage: React.FC<StatusMessageProps> = ({ loading, error, charactersCount, query }) => {
     return (
         <div className="flex flex-col justify-center">
             {loading && <p className="mt-4 text-center">Loading...</p>}
